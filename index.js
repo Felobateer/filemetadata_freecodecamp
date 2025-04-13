@@ -13,7 +13,7 @@ app.get('/', function (req, res) {
 });
 
 const multer = require('multer');
-const upload = multer({ __dest: 'uploads/' });
+const upload = multer({ dest: 'uploads/' });
 
 app.post('/api/fileanalyse', upload.single('upfile'), function (req, res) {
   if (!req.file) {
