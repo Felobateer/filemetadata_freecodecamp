@@ -6,7 +6,9 @@ var app = express();
 
 const multer = require('multer');
 const upload = multer({ storage: multer.memoryStorage() });
-app.use(cors());
+app.use(cors({
+  origin: '*'
+}));
 app.use(express.static('public'));
 app.use('/public', express.static(process.cwd() + '/public'));
 
