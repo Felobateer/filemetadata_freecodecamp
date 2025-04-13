@@ -17,7 +17,7 @@ const upload = multer({ storage: multer.memoryStorage() });
 app.post('/api/fileanalyse', upload.single('upfile'), function (req, res) {
   const file = req.file;
   if (!file) {
-    return res.status(400).json({ error: 'No file uploaded' });
+    return res.json({ error: 'No file uploaded' });
   }
   const fileInfo = {
     name: file.originalname,
